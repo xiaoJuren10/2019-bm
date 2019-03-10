@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">  
+<mapper namespace="cn.bluemobi.mapper.app.AppCommunityMapper">
+	<select id="addCommunity" parameterType="Map" statementType="CALLABLE">
+		CALL pro_createCommunity( 
+			#{cName,mode=IN,jdbcType=VARCHAR},
+			#{ct,mode=IN,jdbcType=VARCHAR},
+			#{userId,mode=IN,jdbcType=INTEGER},
+			#{rs,mode=OUT,jdbcType=VARCHAR}
+		)	
+	</select>
+</mapper>
